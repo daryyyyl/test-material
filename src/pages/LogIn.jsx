@@ -1,4 +1,4 @@
-import { IconButton, Paper, Typography } from "@mui/material";
+import { Button, IconButton, Paper, Typography } from "@mui/material";
 import React, { useState } from "react";
 
 export default function LogIn() {
@@ -59,14 +59,13 @@ export default function LogIn() {
           <label htmlFor="user_pass" className="text-secondary">
             Password
           </label>
-          <button
-            type="button"
+          <IconButton
             className="text-secondary bg-transparent float-end border-0"
             onClick={handlePasswordVisibility}
             style={
               passwordVisible
-                ? { margin: "-40px 9px 0px 0px" }
-                : { margin: "-40px 10px 0px 0px" }
+                ? { margin: "-47px 8.6px 0px 0px" }
+                : { margin: "-47px 10px 0px 0px" }
             }
           >
             <i
@@ -74,7 +73,7 @@ export default function LogIn() {
                 passwordVisible ? "fa-solid fa-eye-slash" : "fa-solid fa-eye" // font awesome icon
               }
             />
-          </button>
+          </IconButton>
         </div>
       </Paper>
     </div>
