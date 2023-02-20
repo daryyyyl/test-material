@@ -40,12 +40,16 @@ export default function LogIn() {
           style={{ height: "8vh", marginTop: "26px" }}
           alt="Algo app logo"
         />
-        <Typography variant="h5" sx={{ textAlign: "center", mt: "26px" }}>
+        <Typography variant="h5" sx={{ textAlign: "center", margin: "26px 0" }}>
           <strong>Hi, Welcome to Algo</strong>
         </Typography>
-        <Typography sx={{ textAlign: "center", mt: "15px", mb: "20px" }}>
+        {/* <Typography
+          variant="body2"
+          sx={{ textAlign: "center", mt: "15px", mb: "20px" }}
+        >
           Sign in with Email address
-        </Typography>
+          <br /> or Username
+        </Typography> */}
         <div className="form-floating mb-3">
           <input
             type="email"
@@ -92,7 +96,6 @@ export default function LogIn() {
             />
           </IconButton>
         </div>
-
         <Stack
           direction="row"
           justifyContent="space-between"
