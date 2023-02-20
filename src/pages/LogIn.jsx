@@ -1,5 +1,15 @@
-import { Button, IconButton, Paper, Typography } from "@mui/material";
+import {
+  Button,
+  Checkbox,
+  FormControlLabel,
+  IconButton,
+  Paper,
+  Stack,
+  Typography,
+} from "@mui/material";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import appLogo from "../media/logo.png";
 
 export default function LogIn() {
   const [passwordVisible, setPasswordVisible] = useState(false);
@@ -19,13 +29,19 @@ export default function LogIn() {
         elevation={0}
         sx={{
           borderRadius: "12px",
-          padding: "24px",
-          minWidth: "450px",
+          padding: "30px",
+          minWidth: "425px",
           my: "auto",
         }}
       >
+        <img
+          src={appLogo}
+          className="rounded mx-auto d-block"
+          style={{ height: "8vh", marginTop: "26px" }}
+          alt="Algo app logo"
+        />
         <Typography variant="h5" sx={{ textAlign: "center", mt: "26px" }}>
-          <strong>Hi, Welcome to Algone Richards</strong>
+          <strong>Hi, Welcome to Algo</strong>
         </Typography>
         <Typography sx={{ textAlign: "center", mt: "15px", mb: "20px" }}>
           Sign in with Email address
@@ -60,12 +76,13 @@ export default function LogIn() {
             Password
           </label>
           <IconButton
+            size="small"
             className="text-secondary bg-transparent float-end border-0"
             onClick={handlePasswordVisibility}
-            style={
+            sx={
               passwordVisible
-                ? { margin: "-47px 8.6px 0px 0px" }
-                : { margin: "-47px 10px 0px 0px" }
+                ? { margin: "-41px 14px 0px 0px" }
+                : { margin: "-41px 15px 0px 0px" }
             }
           >
             <i
@@ -75,6 +92,31 @@ export default function LogIn() {
             />
           </IconButton>
         </div>
+
+        <Stack
+          direction="row"
+          justifyContent="space-between"
+          alignItems="baseline"
+          spacing={0}
+        >
+          <FormControlLabel
+            control={<Checkbox size="small" />}
+            label={<Typography variant="body2">Remember me</Typography>}
+          />
+          <Typography variant="body2">
+            <Link to="#" className="float-end">
+              Forgot password?
+            </Link>
+          </Typography>
+        </Stack>
+        <Button
+          variant="contained"
+          size="medium"
+          className="mt-3"
+          sx={{ width: "100%" }}
+        >
+          Log In
+        </Button>
       </Paper>
     </div>
   );
